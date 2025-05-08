@@ -133,7 +133,7 @@
     display: block;
     width: 28px;
     height: 3px;
-    background-color: var(--text-primary);
+    background-color: var(--text-main);
     margin: 5px auto;
     transition: var(--transition-smooth);
     border-radius: 3px;
