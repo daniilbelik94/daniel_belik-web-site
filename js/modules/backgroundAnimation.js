@@ -9,7 +9,7 @@ export function initBackgroundAnimation() {
     const ctx = canvas.getContext('2d');
 
     let particlesArray = [];
-    const numberOfParticles = 80; // Количество частиц (подберите оптимальное)
+    const numberOfParticles = 50; // Количество частиц (подберите оптимальное)
     const connectDistance = 100; // Макс. расстояние для соединения линий
     const cursorConnectDistance = 150; // Макс. расстояние для соединения с курсором
 
