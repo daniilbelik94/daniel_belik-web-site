@@ -125,8 +125,8 @@
 
 .burger-menu:hover,
 .burger-menu.active {
-    color: var(--primary);
-    transition: color 0.4s ease-out;
+    color: var(--text-primary);
+    transition: color, background-color 0.4s ease-out;
 }
 
 .burger-bar {
@@ -138,6 +138,7 @@
     transition: var(--transition-smooth);
     border-radius: 3px;
 }
+
 
 /* Анимация бургер-иконки в "крестик" */
 .burger-menu.active .burger-bar:nth-child(1) {

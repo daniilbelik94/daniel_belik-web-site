@@ -7,7 +7,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: var(--darker-bg);
+    background-color: var(--bg-element);
     /* Темный фон */
     color: var(--text-secondary);
     padding: 1.5rem 0;
@@ -75,6 +75,7 @@
 /* Адаптивность для Cookie Banner */
 @media (max-width: 768px) {
     .cookie-banner-content {
+        padding: 1rem;
         flex-direction: column;
         text-align: center;
         gap: 1rem;

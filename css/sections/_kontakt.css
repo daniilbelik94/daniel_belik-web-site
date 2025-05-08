@@ -341,8 +341,7 @@
     }
 
     .kontakt-item {
-        justify-content: center;
-        /* Центрируем элементы внутри kontakt-item */
+        text-align: left;
     }
 
     .kontakt-item i {

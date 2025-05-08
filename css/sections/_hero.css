@@ -186,7 +186,6 @@
         gap: 1rem;
     }
     .btn {
-        width: 80%;
         max-width: 300px; /* Максимальная ширина для кнопок на мобильных */
         padding: 0.9rem 1.5rem;
     }
