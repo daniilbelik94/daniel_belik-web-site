@@ -8,6 +8,7 @@ import { initFaq } from './modules/faq.js';
 import { initKontaktForm } from './modules/formHandler.js';
 import { initCookieBanner } from './modules/cookieBanner.js';
 import { initBackgroundAnimation } from './modules/backgroundAnimation.js';
+import { initScrollAnimations } from './modules/scrollAnimations.js';
 function initFooter() {
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
@@ -25,8 +26,8 @@ document.addEventListener('DOMContentLoaded', async () => { // <--- Сделай
         initKontaktForm,
         initFooter,
         initCookieBanner,
-        initBackgroundAnimation // <--- ДОБАВЬТЕ ВЫЗОВ ЗДЕСЬ (или раньше)
-        // initScrollAnimations
+        initBackgroundAnimation,
+        initScrollAnimations
     ];
     modulesToInit.forEach(initModule => {
         try {
