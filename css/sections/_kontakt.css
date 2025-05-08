@@ -76,29 +76,32 @@
     gap: 1rem;
 }
 
-.social-icon {
+.social-icon-footer {
     color: var(--text-muted);
-    border: 2px solid var(--border-main);
-    font-size: 1.5rem;
-    /* Размер иконки */
-    display: inline-flex;
-    /* Для центрирования иконки внутри ссылки */
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border: 2px solid var(--border-color);
-    border-radius: 50%;
-    transition: border-color 0.4s ease, ;
+        font-size: 1.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border: 2px solid var(--border-main);
+        border-radius: 50%;
+        transition: color 0.3s ease,
+            border-color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
 }
 
-.social-icon:hover {
+.social-icon-footer:hover,
+.social-icon-footer:focus {
     color: var(--secondary);
-    border-color: var(--secondary);
-    transform: scale(1.1) rotate(-5deg) ease;
-    box-shadow: var(--glow-cyan);
-    transition: border-color 0.4s ease;
-
+        border-color: var(--secondary);
+        transform: scale(1.1) rotate(-5deg);
+        box-shadow: var(--glow-cyan);
+        transition: color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 /* Правая колонка: Контактная форма */

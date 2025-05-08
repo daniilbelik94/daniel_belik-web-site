@@ -55,6 +55,13 @@
     --glow-indigo: var(--glow-indigo-dark);
     --glow-purple: var(--glow-purple-dark);
     --border-glow-color: rgba(var(--primary-rgb), 0.4);
+    --navbar-bg-dark: rgba(17, 24, 39, 0.85);
+    --mobile-overlay-bg-dark: rgba(17, 24, 39, 0.98);
+    --light-bg-color-rgb: 249, 250, 251;
+    --navbar-bg-light: rgba(var(--light-bg-color-rgb), 0.85); 
+    --mobile-overlay-bg-light: rgba(249, 250, 251, 0.98);
+    --navbar-background: var(--navbar-bg-dark);
+    --mobile-overlay-background: var(--mobile-overlay-bg-dark);
 
 
     /* Общие переменные (не зависят от темы) */
@@ -82,13 +89,13 @@ body.light-theme {
     --text-link-color: var(--primary-dark);   /* Темно-индиго для ссылок на светлом фоне */
     --border-main: var(--light-border-main);
     --border-input: var(--light-border-input);
-    --navbar-background: var(--light-navbar-bg);
     --shadow-subtle: var(--light-shadow-subtle);
     --glow-cyan: var(--light-glow-cyan);
     --glow-indigo: var(--light-glow-indigo);
     --glow-purple: var(--light-glow-purple);
     --border-glow-color: var(--primary);
-
+    --navbar-background: var(--navbar-bg-light);
+    --mobile-overlay-background: var(--mobile-overlay-bg-light);
     /* Цвета Canvas для светлой темы */
     --canvas-particle-color: var(--primary-dark); /* Частицы можно сделать темнее для лучшего контраста */
     --canvas-line-color: var(--primary);          /* Линии могут остаться primary или primary-dark */
