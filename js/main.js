@@ -9,6 +9,7 @@ import { initKontaktForm } from './modules/formHandler.js';
 import { initCookieBanner } from './modules/cookieBanner.js';
 import { initBackgroundAnimation } from './modules/backgroundAnimation.js';
 import { initScrollAnimations } from './modules/scrollAnimations.js';
+import { initThemeSwitcher } from './modules/themeSwitcher.js';
 function initFooter() {
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
@@ -27,7 +28,8 @@ document.addEventListener('DOMContentLoaded', async () => { // <--- Сделай
         initFooter,
         initCookieBanner,
         initBackgroundAnimation,
-        initScrollAnimations
+        initScrollAnimations,
+        initThemeSwitcher
     ];
     modulesToInit.forEach(initModule => {
         try {

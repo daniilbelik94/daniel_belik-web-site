@@ -14,7 +14,10 @@
 .kontakt-info-socials {
     flex: 1;
     max-width: 40%;
-    /* Ограничиваем ширину левой колонки */
+    background-color: var(--bg-element);
+    padding: 2rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-subtle);
 }
 
 .kontakt-details h3 {
@@ -24,7 +27,7 @@
 }
 
 .kontakt-details p {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
@@ -33,7 +36,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 .kontakt-item i {
@@ -46,13 +49,16 @@
 }
 
 .kontakt-item a {
-    color: var(--text-link);
+    color: var(--text-link-color);
     text-decoration: none;
+    transition: color 0.4s ease, var(--transition-smooth);
 }
 
 .kontakt-item a:hover {
     color: var(--primary);
     text-decoration: underline;
+    transition: color 0.4s ease, var(--transition-smooth);
+
 }
 
 .kontakt-socials {
@@ -71,7 +77,8 @@
 }
 
 .social-icon {
-    color: var(--text-secondary);
+    color: var(--text-muted);
+    border: 2px solid var(--border-main);
     font-size: 1.5rem;
     /* Размер иконки */
     display: inline-flex;
@@ -82,20 +89,26 @@
     height: 45px;
     border: 2px solid var(--border-color);
     border-radius: 50%;
-    transition: var(--transition-smooth);
+    transition: border-color 0.4s ease, ;
 }
 
 .social-icon:hover {
     color: var(--secondary);
     border-color: var(--secondary);
-    transform: scale(1.1) rotate(-5deg);
+    transform: scale(1.1) rotate(-5deg) ease;
     box-shadow: var(--glow-cyan);
+    transition: border-color 0.4s ease;
+
 }
 
 /* Правая колонка: Контактная форма */
 .kontakt-form-container {
     flex: 1.5;
-    /* Форма занимает больше места */
+
+    background-color: var(--bg-element);
+    padding: 2rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-subtle);
 }
 
 .contact-form .form-group {
@@ -108,11 +121,11 @@
 .contact-form textarea {
     width: 100%;
     padding: 1rem 0.8rem 0.8rem;
-    /* Отступ сверху для метки, когда она "плавает" */
-    background-color: var(--element-bg);
-    border: 1px solid var(--border-color);
+    background-color: var(--bg-element);
+    border: 1px solid var(--border-input);
+    color: var(--text-main);
     border-radius: var(--border-radius-sm);
-    color: var(--text-primary);
+
     font-size: 1rem;
     font-family: var(--font-primary);
     transition: border-color var(--transition-normal);
@@ -130,7 +143,7 @@
     background-color: var(--element-bg); ;
     /* Начальное положение метки */
     left: 0.8rem;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-size: 1rem;
     pointer-events: none;
     /* Метка не должна перехватывать клики */
@@ -158,7 +171,7 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--primary);
-    box-shadow: var(--glow-indigo);
+        box-shadow: var(--glow-indigo);
 }
 
 .btn-submit {
@@ -167,6 +180,8 @@
     justify-content: center;
     gap: 0.5rem;
     width: auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Плавное изменение цвета и тени при наведении */
     /* или 100% если нужна кнопка на всю ширину */
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -178,6 +193,7 @@
 
 .btn-submit:hover i {
     transform: translateX(3px) rotate(-10deg);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #form-status {

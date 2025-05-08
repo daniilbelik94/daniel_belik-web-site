@@ -18,13 +18,14 @@ html {
 
 body {
     font-family: var(--font-primary);
-    background-color: var(--dark-bg);
-    color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
-    /* Предотвращаем горизонтальный скролл */
+    background-color: var(--bg-main);
+
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
     position: relative;
-    /* Для псевдоэлемента фона */
+
+    z-index: 0;
 }
 #background-canvas {
     position: fixed;
@@ -260,4 +261,24 @@ body.static-content-page::before {
 
 .static-page-footer a:hover {
     color: var(--primary);
+}
+
+#hero,
+#ueber-mich,
+#leistungen,
+/* или .benefits-style-section */
+#portfolio,
+#testimonials,
+/* или .reviews-style-section */
+#faq,
+#kontakt {
+    background-color: transparent !important;
+    /* Делаем фон секций прозрачным, !important для переопределения */
+    position: relative;
+    /* Чтобы контент внутри секций корректно располагался над fixed canvas */
+    z-index: 1;
+    /* Или любое значение больше z-index canvas, если необходимо */
+    /* Сохраните ваши паддинги */
+    padding: 5rem 0;
+    /* Пример */
 }

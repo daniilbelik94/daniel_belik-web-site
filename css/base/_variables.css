@@ -1,67 +1,96 @@
 /* css/base/_variables.css */
 :root {
-    --primary: #6366f1;
-    /* Indigo - Hauptakzentfarbe */
+    /* Базовые цвета (остаются как есть) */
+    --primary: #6366f1; /* Indigo */
+    --primary-dark: #4f46e5; /* Darker Indigo */
     --primary-rgb: 99, 102, 241;
-    /* Indigo - Hauptakzentfarbe */
-    --primary-dark: #4f46e5;
-    /* Dunkleres Indigo */
-    --secondary: #06b6d4;
-    /* Cyan - Sekundärer Akzent */
-    --accent: #a855f7;
-    /* Purple - Für spezielle Hervorhebungen */
+    --secondary: #06b6d4; /* Cyan */
+    --secondary-rgb: 6, 182, 212;
+    --accent: #a855f7; /* Purple */
+    --accent-rgb: 168, 85, 247;
 
-    --dark-bg: #111827;
-    /* Haupt-Hintergrundfarbe (Dunkelgrau-Blau) */
-    --darker-bg: #030712;
-    /* Sehr dunkler Hintergrund für Kontrastelemente/Sektionen */
-    --element-bg: #1f2937;
-    /* Hintergrund für Karten, Formularfelder etc. */
+    /* Базовые цвета для темной темы (как было) */
+    --dark-bg-color: #111827;
+    --darker-bg-color: #030712;
+    --element-bg-color-dark: #1f2937;
+    --text-primary-dark: #f3f4f6;
+    --text-secondary-dark: #9ca3af;
+    --border-color-dark: rgba(99, 102, 241, 0.2);
+    --navbar-bg-dark: rgba(17, 24, 39, 0.85);
+    --subtle-shadow-dark: 0 5px 20px rgba(0, 0, 0, 0.25);
+    --glow-cyan-dark: 0 0 18px rgba(6, 182, 212, 0.6), 0 0 30px rgba(6, 182, 212, 0.4);
+    --glow-indigo-dark: 0 0 18px rgba(99, 102, 241, 0.6), 0 0 30px rgba(99, 102, 241, 0.4);
+    --glow-purple-dark: 0 0 18px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.4);
 
-    --text-primary: #f3f4f6;
-    /* Haupttextfarbe (Hellgrau/Off-white) */
-    --text-secondary: #9ca3af;
-    /* Sekundäre Textfarbe (Mittelgrau) */
-    --text-link: var(--secondary);
-    /* Standardfarbe für Links */
+    /* --- НОВЫЕ Базовые цвета для СВЕТЛОЙ темы --- */
+    --light-bg-main: #f9fafb;            /* Главный фон страницы (очень светло-серый) */
+    --light-bg-secondary: #ffffff;       /* Фон для секций, которые должны быть белыми (контраст к bg-main) */
+    --light-bg-element: #ffffff;         /* Фон для элементов типа карточек, полей ввода (белый) */
+    --light-bg-element-alt: #f0f1f3;   /* Слегка серый фон для элементов, если нужен акцент (например, фон формы на белой секции) */
+    --light-text-main: #1f2937;          /* Основной текст (темно-серый) */
+    --light-text-muted: #6b7280;         /* Вторичный текст (серый) */
+    --light-border-main: #d1d5db;        /* Основной цвет рамок (заметнее) */
+    --light-border-input: #ced4da;       /* Цвет рамок для полей ввода */
+    --light-navbar-bg: rgba(255, 255, 255, 0.88); /* Фон навбара (чуть менее прозрачный для читаемости) */
+    --light-shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08); /* Мягкая тень */
+    --light-glow-strength: 0.15;         /* Общая сила свечения для светлой темы */
+    --light-glow-cyan: 0 3px 8px rgba(6, 182, 212, var(--light-glow-strength));
+    --light-glow-indigo: 0 3px 8px rgba(99, 102, 241, var(--light-glow-strength));
+    --light-glow-purple: 0 3px 8px rgba(168, 85, 247, var(--light-glow-strength));
 
-    --navbar-bg: rgba(17, 24, 39, 0.85);
-    /* Hintergrund für Navbar mit leichter Transparenz */
-    --glass-effect: blur(10px);
-    /* Für Glassmorphism-Effekte (Navbar) */
 
-    --border-color: rgba(99, 102, 241, 0.2);
-    /* Subtile Randfarbe (Indigo-basiert) */
-    --border-glow: rgba(99, 102, 241, 0.4);
-    /* Stärkere Randfarbe für Fokus/Hover */
+    /* --- Семантические переменные (Используются в стилях) --- */
+    /* Значения по умолчанию - для темной темы */
+    --bg-main: var(--dark-bg-color);
+    --bg-secondary: var(--darker-bg-color);      /* Для фона секций, отличающихся от основного */
+    --bg-element: var(--element-bg-color-dark);  /* Для карточек, полей ввода и т.д. */
+    --text-main: var(--text-primary-dark);
+    --text-muted: var(--text-secondary-dark);
+    --text-link-color: var(--secondary);
+    --border-main: var(--border-color-dark);
+    --border-input: var(--border-color-dark);     /* Рамка для полей ввода */
+    --navbar-background: var(--navbar-bg-dark);
+    --shadow-subtle: var(--subtle-shadow-dark);
+    --glow-cyan: var(--glow-cyan-dark);
+    --glow-indigo: var(--glow-indigo-dark);
+    --glow-purple: var(--glow-purple-dark);
+    --border-glow-color: rgba(var(--primary-rgb), 0.4);
 
-    /* Glow-Effekte für Schatten */
-    --glow-cyan: 0 0 18px rgba(6, 182, 212, 0.6), 0 0 30px rgba(6, 182, 212, 0.4);
-    --glow-indigo: 0 0 18px rgba(99, 102, 241, 0.6), 0 0 30px rgba(99, 102, 241, 0.4);
-    --glow-purple: 0 0 18px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.4);
-    --subtle-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-    /* Allgemeiner, subtiler Schatten */
 
-    /* Übergänge */
-    --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-normal: all 0.3s ease;
-
-    --transition-duration-faq: 0.5s;
-        /* Новая длительность для FAQ ховера/фокуса */
-        --transition-timing-faq: cubic-bezier(0.075, 0.82, 0.165, 1);
-
-    /* Globale Hintergrundgradienten-Variablen */
-    --bg-gradient-start: rgba(99, 102, 241, 0.15);
-    --bg-gradient-end: rgba(6, 182, 212, 0.1);
-
+    /* Общие переменные (не зависят от темы) */
     --color-error: #ef4444;
-    /* Fehlerfarbe */
-
-    /* Layout-Variablen */
+    --glass-effect: blur(8px) saturate(150%); /* Эффект стекла, можно настроить */
+    --font-primary: 'Space Grotesk', sans-serif;
     --container-width: 1140px;
     --border-radius-sm: 8px;
     --border-radius-md: 12px;
+    /* ... остальные общие переменные ... */
 
-    /* Schriftart */
-    --font-primary: 'Space Grotesk', sans-serif;
+    /* Переменные для Canvas фона */
+    --canvas-particle-color: var(--primary);
+    --canvas-line-color: var(--secondary);
+    --canvas-line-color-rgb: var(--secondary-rgb);
+}
+
+/* --- Стили для Светлой Темы --- */
+body.light-theme {
+    --bg-main: var(--light-bg-main);
+    --bg-secondary: var(--light-bg-secondary);
+    --bg-element: var(--light-bg-element); /* По умолчанию элементы белые */
+    --text-main: var(--light-text-main);
+    --text-muted: var(--light-text-muted);
+    --text-link-color: var(--primary-dark);   /* Темно-индиго для ссылок на светлом фоне */
+    --border-main: var(--light-border-main);
+    --border-input: var(--light-border-input);
+    --navbar-background: var(--light-navbar-bg);
+    --shadow-subtle: var(--light-shadow-subtle);
+    --glow-cyan: var(--light-glow-cyan);
+    --glow-indigo: var(--light-glow-indigo);
+    --glow-purple: var(--light-glow-purple);
+    --border-glow-color: var(--primary);
+
+    /* Цвета Canvas для светлой темы */
+    --canvas-particle-color: var(--primary-dark); /* Частицы можно сделать темнее для лучшего контраста */
+    --canvas-line-color: var(--primary);          /* Линии могут остаться primary или primary-dark */
+    --canvas-line-color-rgb: var(--primary-rgb);  /* Подстройте, если основной цвет линий изменится */
 }

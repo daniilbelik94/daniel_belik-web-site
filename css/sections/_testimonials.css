@@ -3,6 +3,7 @@
 .reviews-style-section {
     padding: 5rem 0;
     background-color: var(--dark-bg);
+    
     /* Наш стандартный фон */
 }
 
@@ -33,11 +34,11 @@
 }
 
 .testimonial-reworked-slide {
-    background-color: var(--element-bg);
-    /* Фон слайда из нашей палитры */
-    border-radius: var(--border-radius-md);
-    padding: 1.5rem;
-    box-shadow: var(--subtle-shadow);
+    background-color: var(--bg-element);
+        /* Уже было, это хорошо! */
+        border-radius: var(--border-radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-subtle);
     height: auto;
     /* Автоматическая высота */
     display: flex;
@@ -49,7 +50,7 @@
 }
 
 .testimonial-reworked-text-content {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 1rem;
@@ -108,7 +109,7 @@
 .testimonial-reworked-author-name {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-main);
 }
 
 /* Кнопки навигации Swiper */
@@ -118,6 +119,7 @@
     /* Кнопки справа, как в вашем примере */
     gap: 1rem;
     margin-top: 1.5rem;
+    margin-right: 1rem;
     /* Отступ от слайдера */
     /* Если кнопки должны быть абсолютно позиционированы поверх слайдера:
     position: absolute;
@@ -130,12 +132,13 @@
 }
 
 .testimonial-nav-btn {
-    background-color: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    width: 44px;
+    background-color: rgba(var(--bg-element-rgb), 0.5);
+    border: 1px solid var(--border-main);
+    color: var(--text-muted);
+    box-shadow: var(--shadow-subtle);
+    width: 40px;
     /* Размер кнопки */
-    height: 44px;
+    height: 40px;
     border-radius: var(--border-radius-sm);
     display: inline-flex;
     align-items: center;
@@ -147,9 +150,11 @@
 }
 
 .testimonial-nav-btn:hover {
-    background-color: var(--element-bg);
-    color: var(--primary);
-    border-color: var(--primary);
+    background-color: var(--bg-element);
+        /* Непрозрачный фон при наведении */
+        color: var(--primary);
+        border-color: var(--primary);
+        box-shadow: var(--glow-indigo);
 }
 
 .testimonial-nav-btn.swiper-button-disabled {
@@ -187,4 +192,22 @@
     }
 
     /* Можно настроить slidesPerView для десктопа в JS */
+}
+
+
+.testimonial-nav-btn {
+    /* ... существующие стили ... */
+    box-shadow: var(--shadow-subtle);
+    /* Общая тень */
+    /* или более специфичная тень, если нужно */
+    /* transition: var(--transition-normal), box-shadow var(--transition-normal); */
+    /* Добавить box-shadow в transition */
+}
+
+.testimonial-nav-btn:hover {
+    /* ... существующие стили ... */
+    /* Можно усилить тень при наведении или использовать свечение */
+    box-shadow: var(--glow-indigo);
+    /* Например, или var(--primary) с альфа-каналом */
+    border-color: var(--primary);
 }

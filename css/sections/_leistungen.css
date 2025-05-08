@@ -50,12 +50,11 @@
 /* --- Стили для всех карточек преимуществ --- */
 .benefit-item {
     /* Убираем фон и тень по умолчанию */
-    background-color: transparent;
-    padding: 1rem 0;
-    /* Уменьшаем padding, т.к. нет фона */
-    border-radius: 0;
+    background-color: var(--bg-element);
+    padding: 1.5rem ;
+    border-radius: var(--border-radius-md);
     /* Сбрасываем, если не нужен */
-    box-shadow: none;
+    box-shadow: var(--shadow-subtle);
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -132,8 +131,9 @@
 @media screen and (min-width: 768px) {
 
     /* Планшеты */
-    .benefits-main-title {
-        font-size: 5rem;
+    .section-title.leistungen-main-title {
+        margin-top: 3rem;
+        font-size: 4.5rem;
         /* Значительно крупнее */
     }
 
@@ -142,7 +142,7 @@
         /* Заголовок и первая карточка в ряд */
         align-items: flex-start;
         /* Выравнивание по верху */
-        gap: 4rem;
+        gap: 7rem;
         /* Расстояние между заголовком и первой карточкой */
         margin-bottom: 2rem;
     }
@@ -157,7 +157,7 @@
         flex-basis: 40%;
         /* Первая карточка занимает оставшееся место */
         flex-shrink: 0;
-        padding-top: 0.5rem;
+        padding-top: 1.5rem;
         /* Небольшой отступ сверху, чтобы выровнять с текстом заголовка */
     }
 
@@ -171,8 +171,8 @@
 @media screen and (min-width: 1024px) {
 
     /* Десктопы */
-    .benefits-main-title {
-        font-size: 6.5rem;
+    .section-title.leistungen-main-title {
+        font-size: 5.5rem;
         /* Максимально крупный заголовок */
         letter-spacing: 0.005em;
     }

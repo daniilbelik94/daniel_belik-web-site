@@ -1,9 +1,7 @@
-/* css/sections/_ueber-mich.css */
 #ueber-mich {
     padding: 5rem 0;
-    /* Отступы сверху и снизу */
-    background-color: var(--dark-bg);
-    /* Основной фон секции */
+    background-color: var(--bg-secondary);
+    /* ИЗМЕНЕНО */
 }
 
 .ueber-mich-content {
@@ -19,6 +17,15 @@
     /* Занимает доступное пространство */
     max-width: 60%;
     /* Ограничиваем ширину текстового блока */
+}
+.ueber-mich-text-wrapper {
+    /* Новый класс-обертка для текста */
+    background-color: var(--bg-element);
+    padding: 2rem;
+    border-radius: 12px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-subtle);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .ueber-mich-text h3 {
@@ -40,7 +47,17 @@
 .ueber-mich-text .btn {
     /* Кнопка "Lass uns reden" */
     margin-top: 1rem;
+    background-color: var(--bg-element);
+    transition: background-color 0.4s ease-out;
 }
+
+.ueber-mich-text .btn:hover,
+.ueber-mich-text .btn:focus {
+    transition: background-color 0.4s ease-out,
+        color 0.4s ease-out;
+}   
+    /* Кнопка "Lass uns reden" */
+
 
 .ueber-mich-image-container {
     flex-basis: 35%;
@@ -59,7 +76,7 @@
     height: auto;
     border-radius: var(--border-radius-md);
     /* Начальная прозрачная рамка */
-    box-shadow: var(--subtle-shadow);
+    box-shadow: var(--shadow-subtle);
     /* Начальная тень */
     transition: var(--transition-smooth);
 }
