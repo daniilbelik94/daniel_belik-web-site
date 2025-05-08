@@ -67,8 +67,7 @@
     margin-left: auto;
     /* Если нужно прижать вправо, когда текстовый блок не 60% */
     margin-right: auto;
-    rotate: 2deg;
-    /* Центрирование на мобильных */
+    rotate: 1deg;
 }
 
 .ueber-mich-image {
