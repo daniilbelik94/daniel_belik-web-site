@@ -1,0 +1,162 @@
+/* css/sections/_footer.css */
+#main-footer {
+    background-color: var(--dark-bg);
+    /* Такой же фон, как у некоторых секций для консистентности */
+    padding: 4rem 0 0;
+    /* Отступ сверху, нижний отступ будет у .footer-bottom */
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    /* Расстояние между колонками */
+    margin-bottom: 3rem;
+}
+
+.footer-column h4,
+.footer-column h5 {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    /* 18px */
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.footer-logo {
+    color: var(--primary);
+    font-size: 1.5rem;
+    /* Размер лого в футере */
+    font-weight: 700;
+}
+
+.footer-about p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-top: 0.5rem;
+    /* Если лого это h4 */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.2rem 0;
+    transition: color var(--transition-normal);
+}
+
+/* Эффект подчеркивания для ссылок в футере (такой же, как в основной навигации) */
+.footer-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    /* От левого края текста */
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.footer-nav-link:hover {
+    color: var(--text-primary);
+}
+
+.footer-nav-link:hover::after {
+    width: 70%;
+}
+
+.social-icons-footer {
+    display: flex;
+    gap: 1rem;
+    /* Расстояние между иконками */
+}
+
+.social-icon-footer {
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    /* Размер иконок в футере */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid transparent;
+    /* Начальное состояние */
+    border-radius: 50%;
+    transition: var(--transition-smooth);
+}
+
+.social-icon-footer:hover {
+    color: var(--secondary);
+    border-color: var(--secondary);
+    transform: scale(1.1);
+    /* Можно добавить box-shadow: var(--glow-cyan); если хочется */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    /* Линия над копирайтом */
+    font-size: 0.85rem;
+}
+
+/* Адаптивность для футера */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+
+    .footer-column {
+        text-align: center;
+        /* Центрируем контент колонок на мобильных */
+    }
+
+    .footer-nav-link::after {
+        /* Центрируем подчеркивание под ссылкой */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons-footer {
+        justify-content: center;
+        /* Центрируем иконки соцсетей */
+    }
+
+    .footer-about p {
+        padding: 0 1rem;
+        /* Небольшие отступы для текста "о вас", чтобы не прилипал к краям */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        /* Одна колонка на очень маленьких экранах */
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-column:last-child {
+        margin-bottom: 0;
+    }
+}

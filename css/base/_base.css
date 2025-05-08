@@ -1,0 +1,263 @@
+/* css/base/_base.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Базовый сброс и box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    /* Базовый размер шрифта для rem */
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Предотвращаем горизонтальный скролл */
+    position: relative;
+    /* Для псевдоэлемента фона */
+}
+#background-canvas {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: block;
+    filter: blur(2px);
+    /* Добавляем размытие, значение можно настроить */
+    /* Для диагностики можно временно добавить !important: */
+    /* position: fixed !important; */
+    /* width: 100% !important; */
+    /* height: 100% !important; */
+    /* z-index: -1 !important; */
+}
+.icon {
+    fill: black;
+    stroke: azure;
+}
+/* Глобальный анимированный фон */
+/* body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Помещаем за всем контентом */
+    /* background: linear-gradient(45deg,
+            var(--bg-gradient-start) 0%,
+            var(--bg-gradient-end) 50%,
+            var(--bg-gradient-start) 100%);
+    background-size: 400% 400%;
+    /* Размер для анимации */
+    /* animation: gridGradientShift 20s ease infinite, pulse 10s infinite alternate;
+    opacity: 0.6; */ 
+    /* Немного приглушим, чтобы не мешал контенту */
+/* }  */
+
+/* Базовые стили для ссылок */
+a {
+    color: var(--text-link);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+/* Базовые стили для изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Общий контейнер для секций */
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+    /* Небольшие отступы по бокам */
+}
+
+/* Общий класс для заголовков секций (h2) */
+.section-title {
+    font-size: 2.5rem;
+    /* 40px */
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    /* 24px */
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.75rem;
+    /* 12px, место для "подчеркивания" */
+    /* Анимацию подчеркивания добавим позже через JS или CSS анимацию */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    /* Ширина подчеркивания */
+    height: 4px;
+    /* Толщина подчеркивания */
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+
+/* Класс для скрытия элементов (для анимаций появления) */
+.hidden-initially {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+/* Класс для ситуаций, когда модальное окно открыто (например, мобильное меню) */
+body.modal-open {
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+body.static-content-page::before {
+    display: none;
+}
+
+/* Стили для хедера статических страниц */
+.static-page-header {
+    padding: 1.5rem 0;
+    background-color: var(--darker-bg);
+    /* Или var(--navbar-bg) если хотите полупрозрачность */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.static-page-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.static-page-logo span {
+    color: var(--primary);
+}
+
+.static-page-logo:hover {
+    color: var(--primary-dark);
+}
+
+.static-page-logo:hover span {
+    color: var(--text-primary);
+}
+
+/* Стили для основного контента статических страниц */
+.static-page-main-content {
+    padding: 3rem 0;
+    min-height: calc(100vh - 150px);
+    /* Примерная минимальная высота, чтобы футер не прилипал */
+}
+
+.page-main-title {
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.75rem;
+    display: inline-block;
+    /* Чтобы border-bottom был по ширине текста */
+}
+
+/* Центрирование заголовка страницы, если он один */
+.static-page-main-content .container>.page-main-title:first-child {
+    display: block;
+    /* Для центрирования через text-align родителя */
+}
+
+
+.content-h2 {
+    /* Стили для заголовков H2 внутри контента */
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.content-h3 {
+    /* Стили для заголовков H3 */
+    font-size: 1.4rem;
+    color: var(--secondary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.static-page-main-content p,
+.static-page-main-content ul li {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.static-page-main-content ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.static-page-main-content ul ul {
+    list-style: circle;
+}
+
+
+.static-page-main-content a {
+    color: var(--text-link);
+}
+
+.static-page-main-content a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Стили для футера статических страниц */
+.static-page-footer {
+    background-color: var(--darker-bg);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.static-page-footer a {
+    color: var(--text-link);
+    text-decoration: none;
+}
+
+.static-page-footer a:hover {
+    color: var(--primary);
+}

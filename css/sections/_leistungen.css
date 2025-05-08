@@ -1,0 +1,205 @@
+/* css/sections/_leistungen.css - ОБНОВЛЕННЫЕ СТИЛИ */
+.benefits-style-section {
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+/* .benefits-style-container остается без изменений (стандартный .container) */
+
+/* --- Блок заголовка и первой карточки --- */
+.benefits-top-block {
+    display: flex;
+    /* По умолчанию для мобильных будет в столбец, если не задано другое */
+    flex-direction: column;
+    /* Заголовок над карточкой на мобильных */
+    gap: rem;
+    margin-bottom: 3rem;
+}
+
+.benefits-title-wrapper {
+    text-align: left;
+}
+
+.benefits-main-title {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 2.5rem;
+    /* Увеличим базовый размер */
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    color: var(--text-primary);
+}
+
+.benefits-highlight-word {
+    color: var(--primary);
+    display: block;
+    /* Каждое слово заголовка на новой строке, как на скриншоте */
+}
+
+
+.benefits-main-title {
+    display: flex;
+    flex-direction: column;
+}
+.benefits-highlight-word {
+    display: inline; 
+}
+
+
+
+/* --- Стили для всех карточек преимуществ --- */
+.benefit-item {
+    /* Убираем фон и тень по умолчанию */
+    background-color: transparent;
+    padding: 1rem 0;
+    /* Уменьшаем padding, т.к. нет фона */
+    border-radius: 0;
+    /* Сбрасываем, если не нужен */
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: transform 0.3s ease;
+    /* Оставляем только transform для ховера */
+    border: none;
+    /* Убираем border */
+}
+
+
+
+.benefit-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Центрируем иконку, если контейнер шире */
+    width: 50px;
+    height: 50px;
+    border-radius: var(--border-radius-sm);
+    background-color: rgba(var(--primary-rgb, 99, 102, 241), 0.1);
+    /* Оставляем фон для иконки */
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* На скриншоте иконка слева от текста, не в центре контейнера. Для этого: */
+.benefit-icon-container {
+    justify-content: center;
+    /* Если хотите иконку по центру кружка */
+    /* Если хотите иконку слева в контейнере:
+    justify-content: flex-start;
+    padding-left: 10px; // Примерный отступ
+    width: auto; // Чтобы не растягивался, если иконка маленькая
+    */
+}
+
+.benefit-title {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1.125rem;
+    /* 18px - как в примере */
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.benefit-text {
+    font-weight: 400;
+    /* В примере 300, но для Space Grotesk 400 лучше */
+    font-size: 1rem;
+    /* 16px - как в примере */
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* --- Обертка для остальных 3х карточек --- */
+.benefits-others-wrapper {
+    /* Стили для этого контейнера, если нужны */
+}
+
+.benefits-others-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    /* 1 колонка на мобильных */
+}
+
+
+/* --- Адаптация макета для больших экранов --- */
+@media screen and (min-width: 768px) {
+
+    /* Планшеты */
+    .benefits-main-title {
+        font-size: 5rem;
+        /* Значительно крупнее */
+    }
+
+    .benefits-top-block {
+        flex-direction: row;
+        /* Заголовок и первая карточка в ряд */
+        align-items: flex-start;
+        /* Выравнивание по верху */
+        gap: 4rem;
+        /* Расстояние между заголовком и первой карточкой */
+        margin-bottom: 2rem;
+    }
+
+    .benefits-title-wrapper {
+        flex-basis: 55%;
+        /* Заголовок занимает больше места */
+        flex-shrink: 0;
+    }
+
+    .benefit-item-primary {
+        flex-basis: 40%;
+        /* Первая карточка занимает оставшееся место */
+        flex-shrink: 0;
+        padding-top: 0.5rem;
+        /* Небольшой отступ сверху, чтобы выровнять с текстом заголовка */
+    }
+
+    .benefits-others-list {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 карточки в ряд */
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    /* Десктопы */
+    .benefits-main-title {
+        font-size: 6.5rem;
+        /* Максимально крупный заголовок */
+        letter-spacing: 0.005em;
+    }
+
+    .benefits-title-wrapper {
+        flex-basis: 60%;
+    }
+
+    .benefit-item-primary {
+        flex-basis: 35%;
+    }
+        .benefits-top-block {
+    
+            gap: 4.5rem;
+    
+        }
+}
+
+@media screen and (min-width: 1280px) {
+    .benefits-main-title {
+        font-size: 7.5rem;
+        /* Для очень больших экранов, как в примере */
+    }
+    .benefits-top-block {
+
+        gap: 5.5rem;
+
+    }
+
+}

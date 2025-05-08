@@ -1,0 +1,190 @@
+/* css/sections/_testimonials.css - НОВЫЕ СТИЛИ */
+
+.reviews-style-section {
+    padding: 5rem 0;
+    background-color: var(--dark-bg);
+    /* Наш стандартный фон */
+}
+
+.reviews-main-title {
+    font-family: var(--font-primary);
+    /* Space Grotesk */
+    font-weight: 900;
+    /* Очень жирный, имитируем Impact */
+    font-size: 2.5em;
+    /* Базовый размер */
+    line-height: 1.1;
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    /* Отступ под заголовком */
+}
+
+/* Контейнер Swiper */
+.swiper-testimonials-reworked {
+    width: 100%;
+    max-width: var(--container-width);
+    /* Ограничиваем ширину, если нужно */
+    margin: 0 auto;
+    padding-bottom: 3.5rem;
+    /* Место для кнопок навигации */
+    position: relative;
+    /* Для позиционирования кнопок */
+}
+
+.testimonial-reworked-slide {
+    background-color: var(--element-bg);
+    /* Фон слайда из нашей палитры */
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--subtle-shadow);
+    height: auto;
+    /* Автоматическая высота */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Чтобы автор был внизу, если текст короткий */
+    min-height: 280px;
+    /* Минимальная высота слайда, подберите по контенту */
+}
+
+.testimonial-reworked-text-content {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    height: 150px;
+    /* Фиксированная высота для текста, как в примере */
+    overflow-y: auto;
+    /* Включаем скролл, если текст не помещается */
+}
+
+/* Стилизация кастомного скроллбара (адаптировано из вашего примера) */
+.testimonial-reworked-text-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.testimonial-reworked-text-content::-webkit-scrollbar-track {
+    background: rgba(var(--primary-rgb), 0.1);
+    /* Полупрозрачный фон на основе нашего --primary */
+    border-radius: 3px;
+}
+
+.testimonial-reworked-text-content::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    /* Цвет ползунка */
+    border-radius: 3px;
+    border: 1px solid var(--element-bg);
+    /* Чтобы был небольшой отступ от трека */
+}
+
+.testimonial-reworked-text-content::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-dark);
+}
+
+.testimonial-reworked-author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+    /* Прижимает блок автора к низу, если текст отзыва короткий */
+    padding-top: 0.5rem;
+    /* Отступ сверху, если текст короткий */
+    border-top: 1px solid var(--border-color);
+    /* Разделитель */
+}
+
+.testimonial-reworked-avatar {
+    width: 48px;
+    /* Размер аватара, как в вашем JS-примере */
+    height: 48px;
+    border-radius: 50%;
+    /* Круглый аватар */
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    /* Рамка вокруг аватара */
+}
+
+.testimonial-reworked-author-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Кнопки навигации Swiper */
+.testimonial-reworked-nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    /* Кнопки справа, как в вашем примере */
+    gap: 1rem;
+    margin-top: 1.5rem;
+    /* Отступ от слайдера */
+    /* Если кнопки должны быть абсолютно позиционированы поверх слайдера:
+    position: absolute;
+    bottom: 0; // или top, или по центру
+    right: 0; // или left, или по центру
+    width: 100%; // если нужно растянуть контейнер кнопок
+    z-index: 10;
+    padding: 0 1rem; // чтобы не прилипали к краям
+    */
+}
+
+.testimonial-nav-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    width: 44px;
+    /* Размер кнопки */
+    height: 44px;
+    border-radius: var(--border-radius-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-size: 1rem;
+    /* Размер иконки */
+}
+
+.testimonial-nav-btn:hover {
+    background-color: var(--element-bg);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.testimonial-nav-btn.swiper-button-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background-color: transparent;
+    /* Убираем фон ховера для disabled */
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+.testimonial-error-message {
+    color: var(--color-error);
+}
+
+
+/* Адаптивность */
+@media screen and (min-width: 768px) {
+    .reviews-main-title {
+        font-size: 1.4rem;
+        /* Крупнее на планшетах */
+        margin-bottom: 4rem;
+    }
+
+    .testimonial-reworked-text-content {
+        height: 140px;
+        /* Высота текста как в вашем примере для планшета */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .reviews-main-title {
+        font-size: 2.5rem;
+        /* Еще крупнее */
+    }
+
+    /* Можно настроить slidesPerView для десктопа в JS */
+}

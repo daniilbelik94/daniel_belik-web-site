@@ -1,0 +1,148 @@
+/* css/sections/_portfolio.css */
+#portfolio {
+    padding: 5rem 0;
+    /* Можно чередовать с --darker-bg, если хочется контраста с предыдущей */
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Адаптивная сетка */
+    gap: 2.5rem;
+    /* Расстояние между карточками */
+    margin-top: 3rem;
+}
+
+.portfolio-item {
+    background-color: var(--element-bg);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    /* Важно для эффектов на изображении и border-radius */
+    box-shadow: var(--subtle-shadow);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    /* Изображение сверху, контент снизу */
+}
+
+.portfolio-image-container {
+    overflow: hidden;
+    /* Обрезает изображение при зуме */
+    position: relative;
+    height: 220px;
+    /* Фиксированная высота для единообразия, можно менять */
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Изображение покрывает контейнер, обрезаясь при необходимости */
+    transition: transform 0.5s ease-out, filter 0.5s ease-out;
+    /* Плавный переход для зума и фильтров */
+}
+
+.portfolio-content {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Чтобы контент занимал оставшееся место, если карточки разной высоты */
+}
+
+.portfolio-title {
+    font-size: 1.4rem;
+    /* 22.4px */
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.portfolio-description {
+    font-size: 0.9rem;
+    /* ~14.4px */
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    /* Описание занимает доступное место, выравнивая кнопки по низу */
+}
+
+.btn-projekt {
+    background-color: var(--accent);
+    color: var(--text-primary);
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition-normal);
+    display: inline-block;
+    align-self: flex-start;
+    /* Кнопка не растягивается на всю ширину */
+    margin-top: auto;
+    /* Прижимает кнопку к низу, если описание короткое */
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-projekt span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-projekt i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover-эффекты для карточек портфолио */
+.portfolio-item:hover {
+    box-shadow: var(--glow-purple);
+}
+
+.portfolio-item:hover .portfolio-image {
+    transform: scale(1.1);
+    /* Легкий зум изображения */
+    filter: brightness(1.1) saturate(1.2);
+    /* Немного ярче и насыщеннее */
+}
+
+.btn-projekt:hover {
+    background-color: #9333ea;
+    /* Более темный оттенок --accent (purple-600 Tailwind) */
+    box-shadow: var(--glow-purple);
+    color: #fff;
+}
+
+.btn-projekt:hover i {
+    transform: translateX(5px);
+    /* Анимация стрелки */
+}
+
+
+/* Адаптивность для секции "Portfolio" */
+@media (max-width: 768px) {
+    #portfolio {
+        padding: 3rem 0;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        /* Одна колонка */
+        gap: 2rem;
+    }
+
+    .portfolio-item {
+        /* Можно добавить немного больше вертикального отступа, если нужно */
+    }
+
+    .portfolio-image-container {
+        height: 200px;
+        /* Немного уменьшить высоту изображения на мобильных */
+    }
+
+    .portfolio-title {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,200 @@
+/* css/sections/_hero.css */
+#hero {
+    min-height: 100vh; /* Минимальная высота в весь экран */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 0 4rem; /* Отступы сверху (учитывая навбар) и снизу */
+    position: relative; /* Для возможных псевдоэлементов или оверлеев в будущем */
+    overflow: hidden; /* Предотвратить случайный выход контента */
+}
+
+.hero-container {
+    max-width: 800px; /* Ограничиваем ширину контента в Hero */
+}
+
+.hero-title {
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+    margin-bottom: 1rem; /* 16px */
+    line-height: 1.2;
+    color: var(--text-primary);
+    /* Для анимации при появлении, если будем добавлять */
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-title .gradient-text {
+    display: inline-block; /* Чтобы градиент применился корректно */
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+    background-size: 300% 100%; /* Размер для анимации */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textGradientClip 8s linear infinite;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4.5rem; /* 72px */
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.5rem; /* 24px */
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem; /* 24px */
+    font-weight: 400;
+}
+
+.typewriter-container {
+    display: inline-block;
+    position: relative; /* Для курсора */
+    color: var(--text-primary); /* Цвет печатающегося текста */
+    font-weight: 500;
+    /* min-height будет установлена через JS, чтобы избежать скачков */
+    /* Пример: min-height: 1.5em; (исходя из font-size и line-height) */
+    /* Или мы можем задать его здесь, если знаем максимальную высоту текста */
+    min-height: calc(1.5rem * 1.4); /* font-size * line-height (приблизительно) */
+    vertical-align: top; /* Выравнивание для консистентности */
+}
+
+/* Курсор для пишущей машинки */
+.typewriter-container::after {
+    content: '|';
+    position: absolute;
+    right: -2px;
+    top: -2px; /* Немного подогнать позицию */
+    animation: blink-caret 0.9s step-end infinite;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+
+.hero-description {
+    font-size: 1.125rem; /* 18px */
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem; /* 40px */
+    line-height: 1.7;
+    max-width: 650px; /* Ограничение ширины для лучшей читаемости */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Расстояние между кнопками */
+    flex-wrap: wrap; /* Перенос кнопок на мобильных, если не влезают */
+}
+
+.btn {
+    padding: 0.85rem 2rem;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem; /* 16px */
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    position: relative; /* Для псевдоэлемента ::before */
+    overflow: hidden; /* Чтобы ::before не вылезал за пределы кнопки */
+    z-index: 1; /* Чтобы текст был поверх ::before */
+    display: inline-block; /* Чтобы кнопки вели себя как блочные, но в строку */
+}
+
+.btn span { /* Текст внутри кнопки */
+    position: relative;
+    z-index: 2; /* Текст поверх псевдоэлемента */
+    transition: color var(--transition-normal); /* Плавная смена цвета текста */
+}
+
+.btn::before { /* Псевдоэлемент для hover-эффекта */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Начальное положение слева за пределами кнопки */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); /* Градиент для "шиммера" */
+    transition: left var(--transition-smooth); /* Анимация движения */
+    z-index: 1; /* Под текстом, но над фоном кнопки */
+    opacity: 0; /* Изначально невидимый */
+}
+
+.btn:hover::before {
+    left: 100%; /* Конечное положение справа за пределами кнопки */
+    opacity: 1; /* Делаем видимым при ховере */
+    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease; /* Более длительная анимация для шиммера */
+}
+
+
+/* Стили для основной кнопки */
+.btn.btn-primary {
+    border: 1px solid var(--primary);
+    background-color: transparent;
+    color: var(--text-primary);
+    box-shadow: var(--glow-indigo);
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--primary-dark);
+    color: #fff; /* Можно сделать текст ярче */
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.8), 0 0 40px rgba(99, 102, 241, 0.6);
+}
+
+/* Стили для вторичной кнопки */
+.btn.btn-secondary {
+    border:1px solid var(--secondary);
+    color: var(--text-primary); /* Темный текст на светлом фоне */
+    box-shadow: var(--glow-cyan);
+}
+
+.btn.btn-secondary:hover {
+    background-color: #05a9c3; /* Чуть темнее --secondary */
+    color: var(--darker-bg);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.8), 0 0 40px rgba(6, 182, 212, 0.6);
+}
+
+/* Убедимся, что нет смещения при ховере */
+.btn:hover {
+    transform: none; /* Отменяем любые translateY, если они где-то могли быть */
+}
+
+/* Адаптивность для Hero секции */
+@media (max-width: 768px) {
+    #hero {
+        padding: 5rem 0 3rem;
+    }
+    .hero-title {
+        font-size: 2.5rem; /* 40px */
+    }
+    .hero-subtitle {
+        font-size: 1.25rem; /* 20px */
+    }
+    .typewriter-container {
+         min-height: calc(1.25rem * 1.4);
+    }
+    .hero-description {
+        font-size: 1rem; /* 16px */
+    }
+    .hero-buttons {
+        flex-direction: column; /* Кнопки друг под другом */
+        align-items: center;
+        gap: 1rem;
+    }
+    .btn {
+        width: 80%;
+        max-width: 300px; /* Максимальная ширина для кнопок на мобильных */
+        padding: 0.9rem 1.5rem;
+    }
+}
+
+.btn-cookie-accept {
+        border: 1px solid var(--primary);
+        background-color: transparent;
+        color: var(--text-primary);
+        box-shadow: var(--glow-indigo);
+}

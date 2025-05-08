@@ -1,0 +1,258 @@
+/* css/sections/_navbar.css */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Высокий z-index, чтобы быть поверх всего */
+    background-color: var(--navbar-bg);
+    backdrop-filter: var(--glass-effect);
+    -webkit-backdrop-filter: var(--glass-effect);
+    /* Для Safari */
+    padding: 1.2rem 0;
+    /* Начальный padding */
+    transition: var(--transition-smooth);
+    /* Плавный переход для padding и border */
+    border-bottom: 1px solid transparent;
+    /* Начальная прозрачная граница */
+}
+
+#navbar.scrolled {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--subtle-shadow);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    /* 24px */
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: color 0.4s ease-out;
+    text-decoration: none;
+    
+}
+
+.nav-logo span {
+    color: var(--primary);
+    transition: color 0.4s ease-out;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: textGradientClip 8s linear infinite;
+}
+
+.nav-logo:hover {
+    color: var(--primary-dark);
+}
+
+.nav-logo:hover span {
+    color: var(--text-primary);
+}
+
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-left: 1.8rem;
+    /* 28.8px */
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    /* ~15px */
+    font-weight: 500;
+    padding: 0.5rem 0.2rem;
+    position: relative;
+    transition: color 0.4s ease, var(--transition-normal);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    /* Позиция подчеркивания */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.4s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-primary);
+    transition: color 0.4 ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+    
+}
+
+/* Burger Menu */
+.burger-menu {
+    display: none;
+    /* Скрыто на десктопе */
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    transition: color 0.4s ease-out;
+    font-size: 1.8rem;
+    /* Размер иконки */
+    cursor: pointer;
+    z-index: 1005;
+    /* Выше чем navbar, но ниже оверлея */
+    padding: 0.5rem;
+}
+
+.burger-menu:hover,
+.burger-menu.active {
+    color: var(--primary);
+    transition: color 0.4s ease-out;
+}
+
+.burger-bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--text-primary);
+    margin: 5px auto;
+    transition: var(--transition-smooth);
+    border-radius: 3px;
+}
+
+/* Анимация бургер-иконки в "крестик" */
+.burger-menu.active .burger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu.active .burger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Mobile Overlay Menu */
+.mobile-overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(17, 24, 39, 0.98);
+    /* Немного прозрачнее, чем --navbar-bg */
+    backdrop-filter: var(--glass-effect);
+    -webkit-backdrop-filter: var(--glass-effect);
+    z-index: 1001;
+    /* Выше navbar, но ниже кнопки закрытия если она отдельно */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: opacity var(--transition-smooth), visibility var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.mobile-overlay-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.close-menu-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    transition: color 0.4s ease-out;
+    font-size: 2.5rem;
+    /* Размер крестика */
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+}
+
+.close-menu-btn:hover {
+    color: var(--primary);
+    transition: color 0.4s ease-out;
+}
+
+.mobile-nav-menu {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav-menu li {
+    margin-bottom: 2rem;
+}
+
+.mobile-nav-link {
+    font-size: 1.8rem;
+    /* Крупные ссылки для мобильных */
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.4s ease-out, color var(--transition-smooth), background var(--transition-normal);
+}
+
+.mobile-nav-link:hover {
+    color: var(--primary);
+    transition: color 0.4s ease-out;
+}
+
+
+/* Адаптивность для Navbar */
+@media (max-width: 992px) {
+
+    /* Планшеты и меньше */
+    .nav-menu {
+        display: none;
+        /* Скрываем обычное меню */
+    }
+
+    .burger-menu {
+        display: block;
+        /* Показываем бургер */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Мобильные */
+    .nav-logo {
+        font-size: 1.3rem;
+    }
+
+    #navbar.scrolled {
+        padding: 0.6rem 0;
+    }
+
+    #navbar {
+        padding: 1rem 0;
+    }
+}

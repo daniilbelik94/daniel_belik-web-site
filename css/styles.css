@@ -1,0 +1,19 @@
+/* css/styles.css */
+
+/* Базовые стили */
+@import url('./base/_variables.css');
+@import url('./base/_base.css');
+@import url('./base/_animations.css');
+@import url('./base/_utilities.css');
+
+/* стили секций */
+
+@import url('./sections/_navbar.css');
+@import url('./sections/_hero.css');
+@import url('./sections/_ueber-mich.css');
+@import url('./sections/_leistungen.css');
+@import url('./sections/_portfolio.css');
+@import url('./sections/_testimonials.css');
+@import url('./sections/_faq.css');
+@import url('./sections/_kontakt.css');
+@import url('./sections/_footer.css');

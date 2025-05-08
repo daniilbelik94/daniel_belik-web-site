@@ -1,0 +1,67 @@
+/* css/base/_variables.css */
+:root {
+    --primary: #6366f1;
+    /* Indigo - Hauptakzentfarbe */
+    --primary-rgb: 99, 102, 241;
+    /* Indigo - Hauptakzentfarbe */
+    --primary-dark: #4f46e5;
+    /* Dunkleres Indigo */
+    --secondary: #06b6d4;
+    /* Cyan - Sekundärer Akzent */
+    --accent: #a855f7;
+    /* Purple - Für spezielle Hervorhebungen */
+
+    --dark-bg: #111827;
+    /* Haupt-Hintergrundfarbe (Dunkelgrau-Blau) */
+    --darker-bg: #030712;
+    /* Sehr dunkler Hintergrund für Kontrastelemente/Sektionen */
+    --element-bg: #1f2937;
+    /* Hintergrund für Karten, Formularfelder etc. */
+
+    --text-primary: #f3f4f6;
+    /* Haupttextfarbe (Hellgrau/Off-white) */
+    --text-secondary: #9ca3af;
+    /* Sekundäre Textfarbe (Mittelgrau) */
+    --text-link: var(--secondary);
+    /* Standardfarbe für Links */
+
+    --navbar-bg: rgba(17, 24, 39, 0.85);
+    /* Hintergrund für Navbar mit leichter Transparenz */
+    --glass-effect: blur(10px);
+    /* Für Glassmorphism-Effekte (Navbar) */
+
+    --border-color: rgba(99, 102, 241, 0.2);
+    /* Subtile Randfarbe (Indigo-basiert) */
+    --border-glow: rgba(99, 102, 241, 0.4);
+    /* Stärkere Randfarbe für Fokus/Hover */
+
+    /* Glow-Effekte für Schatten */
+    --glow-cyan: 0 0 18px rgba(6, 182, 212, 0.6), 0 0 30px rgba(6, 182, 212, 0.4);
+    --glow-indigo: 0 0 18px rgba(99, 102, 241, 0.6), 0 0 30px rgba(99, 102, 241, 0.4);
+    --glow-purple: 0 0 18px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.4);
+    --subtle-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    /* Allgemeiner, subtiler Schatten */
+
+    /* Übergänge */
+    --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.3s ease;
+
+    --transition-duration-faq: 0.5s;
+        /* Новая длительность для FAQ ховера/фокуса */
+        --transition-timing-faq: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    /* Globale Hintergrundgradienten-Variablen */
+    --bg-gradient-start: rgba(99, 102, 241, 0.15);
+    --bg-gradient-end: rgba(6, 182, 212, 0.1);
+
+    --color-error: #ef4444;
+    /* Fehlerfarbe */
+
+    /* Layout-Variablen */
+    --container-width: 1140px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+
+    /* Schriftart */
+    --font-primary: 'Space Grotesk', sans-serif;
+}
