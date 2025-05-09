@@ -269,7 +269,7 @@
     }
 
     .typewriter-container.gradient-text-animated {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
         /* Размер шрифта для самого текста */
     }
 
@@ -292,5 +292,16 @@
     margin-bottom: 40px;
 }
 
+}
+@media (max-width: 480px) {
+    .typewriter-container.gradient-text-animated {
+            font-size: 1.8rem;
+            
+            /* Размер шрифта для самого текста */
+        }
+        .hero-description {
+            margin-top: 20px;
+        }
+    
 }
 
