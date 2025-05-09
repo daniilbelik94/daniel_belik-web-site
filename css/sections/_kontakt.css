@@ -186,8 +186,7 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     /* Плавное изменение цвета и тени при наведении */
     /* или 100% если нужна кнопка на всю ширину */
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 12px 24px;
 }
 
 .btn-submit i {
