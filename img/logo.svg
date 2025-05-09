@@ -8,7 +8,7 @@
             
                 <text x="5" y="30" font-family="'Space Grotesk', sans-serif" font-size="30" font-weight="700"
                     fill="url(#logoGradient)">
-                    D<tspan fill="#f3f4f6">B</tspan> </text>
+                    D<tspan fill="#929497">B</tspan> </text>
             
                 <rect x="65" y="15" width="5" height="5" fill="#06b6d4" />
                 <rect x="75" y="20" width="5" height="5" fill="#6366f1" />
