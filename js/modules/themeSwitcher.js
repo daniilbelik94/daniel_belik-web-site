@@ -10,7 +10,6 @@ export function initThemeSwitcher() {
     const prefersDarkScheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 
     function applyTheme(theme) {
-        // console.log(`Applying theme: ${theme}`);
         if (theme === 'light') {
             document.body.classList.add('light-theme');
         } else {
@@ -30,7 +29,7 @@ export function initThemeSwitcher() {
     themeToggleButton.addEventListener('click', () => {
         const isCurrentlyLight = document.body.classList.contains('light-theme');
         const newTheme = isCurrentlyLight ? 'dark' : 'light';
-        localStorage.setItem(STORAGE_KEY, newTheme); // Сохраняем выбор пользователя
+        localStorage.setItem(STORAGE_KEY, newTheme); 
         applyTheme(newTheme);
     });
 
@@ -40,8 +39,6 @@ export function initThemeSwitcher() {
 
     }
     applyTheme(initialTheme);
-
-    // Слушаем изменения системной темы
     if (prefersDarkScheme) {
         prefersDarkScheme.addEventListener('change', (event) => {
 

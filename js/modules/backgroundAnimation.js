@@ -42,8 +42,7 @@ export function initBackgroundAnimation() {
             if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
             this.x += this.speedX;
             this.y += this.speedY;
-            // Перечитываем цвет на всякий случай, если переменная могла измениться
-            // (хотя без API обновления это не произойдет)
+
             this.color = getComputedStyle(document.documentElement).getPropertyValue('--canvas-particle-color').trim() || '#6366f1';
         }
         draw() { // Убрал аргумент context, используем ctx из замыкания

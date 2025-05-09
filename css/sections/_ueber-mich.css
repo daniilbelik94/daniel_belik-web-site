@@ -61,11 +61,8 @@
 
 .ueber-mich-image-container {
     flex-basis: 35%;
-    /* Начальная ширина для контейнера изображения */
     max-width: 350px;
-    /* Максимальная ширина изображения */
     margin-left: auto;
-    /* Если нужно прижать вправо, когда текстовый блок не 60% */
     margin-right: auto;
     rotate: 1deg;
 }
@@ -74,20 +71,15 @@
     width: 100%;
     height: auto;
     border-radius: var(--border-radius-md);
-    /* Начальная прозрачная рамка */
     box-shadow: var(--shadow-subtle);
-    /* Начальная тень */
     transition: var(--transition-smooth);
 }
 
 .ueber-mich-image:hover {
     border-color: var(--border-glow);
-    /* Подсвечивающаяся рамка при ховере */
     box-shadow: var(--glow-purple);
-    /* Фиолетовое свечение при ховере */
 }
 
-/* Адаптивность для секции "Über Mich" */
 @media (max-width: 992px) {
     .ueber-mich-text {
         max-width: 55%;

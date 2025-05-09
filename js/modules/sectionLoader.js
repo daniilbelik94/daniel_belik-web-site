@@ -2,7 +2,7 @@
 
 export async function loadSections() {
     const sectionContainers = document.querySelectorAll('[data-section]');
-    const loadPromises = []; // Массив для промисов загрузки
+    const loadPromises = []; 
 
     for (const container of sectionContainers) {
         const sectionName = container.dataset.section;
@@ -16,7 +16,6 @@ export async function loadSections() {
                 })
                 .then(html => {
                     container.innerHTML = html;
-                    // console.log(`Sektion ${sectionName} erfolgreich geladen.`);
                 })
                 .catch(error => {
                     console.error(error);
@@ -25,8 +24,6 @@ export async function loadSections() {
             loadPromises.push(promise);
         }
     }
-    // Ждем, пока все секции будут загружены
     await Promise.all(loadPromises);
 
-    // После загрузки всех секций можно инициализировать скрипты, которые от них зависят.
 }

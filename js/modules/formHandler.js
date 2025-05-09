@@ -7,7 +7,6 @@ export function initKontaktForm() {
     const successModal = document.getElementById('success-modal');
     const modalCloseBtn = document.getElementById('modal-close-btn');
     const modalUserNameSpan = document.getElementById('modal-user-name');
-    // Получаем скрытое поле _replyto
     const formspreeReplyToField = document.getElementById('formspree-replyto');
 
 
@@ -25,8 +24,8 @@ export function initKontaktForm() {
         const value = field.value.trim();
         const fieldName = field.name;
         const errorContainer = form.querySelector(`.form-error-message[data-validation-for="${fieldName}"]`);
-        if (errorContainer) { // Проверяем, что errorContainer найден
-            errorContainer.textContent = ''; // Очищаем предыдущие ошибки
+        if (errorContainer) { 
+            errorContainer.textContent = ''; 
         }
         field.classList.remove('invalid');
 
@@ -60,7 +59,6 @@ export function initKontaktForm() {
         if (formspreeReplyToField && emailValue) {
             formspreeReplyToField.value = emailValue;
         }
-        // Создаем новый FormData объект ПОСЛЕ установки _replyto, чтобы он был включен
         const finalFormData = new FormData(form);
 
 
@@ -79,7 +77,7 @@ export function initKontaktForm() {
             try {
                 const response = await fetch(form.action, {
                     method: form.method,
-                    body: finalFormData, // Используем finalFormData с установленным _replyto
+                    body: finalFormData, 
                     headers: {
                         'Accept': 'application/json'
                     }
