@@ -1,0 +1,81 @@
+/* SEO и доступность стили */
+
+/* Скрытие элементов только для скринридеров */
+.visually-hidden,
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Улучшенный фокус для доступности */
+*:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Пропуск ссылки для скринридеров */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #0ea5e9;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Стили для улучшения читаемости */
+.text-content {
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+/* Улучшенная контрастность для ссылок */
+a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+}
+
+a:not(.btn):hover,
+a:not(.btn):focus {
+  text-decoration-thickness: 2px;
+}
+
+/* Печатные стили для SEO */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .visually-hidden {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    clip: auto !important;
+  }
+}

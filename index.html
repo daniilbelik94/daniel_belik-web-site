@@ -9,21 +9,36 @@
         content="Portfolio von Daniel Belik, Webentwickler aus Hamburg. Experte für moderne Web-Technologien wie React, Next.js, PHP/Laravel und Datenbanken. Jetzt Kontakt aufnehmen!">
     <meta name="keywords"
         content="Daniel Belik, Webentwickler, Frontend, Backend, Full-Stack, Portfolio, Hamburg, React, Next.js, Vite, PHP, Laravel, JavaScript, HTML, CSS, MySQL, PostgreSQL, MongoDB">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://webblock.org/">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="author" content="Daniel Belik">
+    <meta name="generator" content="Custom HTML/CSS/JavaScript">
+    <link rel="alternate" hreflang="de" href="https://webblock.org/">
     <meta property="og:title" content="Daniel Belik - Webentwickler Portfolio | Hamburg">
     <meta property="og:description"
-        content="Portfolio von Daniel Belik, Webentwickler aus Hamburg. Experte für moderne Web-Technologien.">
+        content="Portfolio von Daniel Belik, Webentwickler aus Hamburg. Experte für moderne Web-Technologien wie React, Next.js, PHP/Laravel und Datenbanken.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="URL_ВАШЕГО_САЙТА">
-    <meta property="og:image" content="URL_К_КАРТИНКЕ_ДЛЯ_ПРЕВЬЮ">
+    <meta property="og:url" content="https://webblock.org/">
+    <meta property="og:image" content="https://webblock.org/img/placeholder/image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Daniel Belik - Webentwickler Portfolio Preview">
+    <meta property="og:site_name" content="Daniel Belik - Webentwickler">
     <meta property="og:locale" content="de_DE">
+    <meta property="og:updated_time" content="2025-01-08T00:00:00+01:00">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Daniel Belik - Webentwickler Portfolio | Hamburg">
     <meta name="twitter:description"
-        content="Portfolio von Daniel Belik, Webentwickler aus Hamburg. Experte für moderne Web-Technologien.">
-    <meta name="twitter:image" content="URL_К_КАРТИНКЕ_ДЛЯ_ПРЕВЬЮ">
+        content="Portfolio von Daniel Belik, Webentwickler aus Hamburg. Experte für moderne Web-Technologien wie React, Next.js, PHP/Laravel.">
+    <meta name="twitter:image" content="https://webblock.org/img/placeholder/image.png">
+    <meta name="twitter:image:alt" content="Daniel Belik - Webentwickler Portfolio Preview">
+    <meta name="twitter:site" content="@danielbelik">
+    <meta name="twitter:creator" content="@danielbelik">
     <link rel="icon" href="img/logo.svg" type="image/svg+xml" sizes="any">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,32 +47,24 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
     <canvas id="background-canvas"></canvas>
+    
     <div id="app-container">
-    </div>
-    <div id="app-container">
-        <div data-section="navbar"></div>
-        <div data-section="hero"></div>
-        <div data-section="ueber-mich"></div>
-        <div data-section="leistungen"></div>
-        <div data-section="portfolio"></div>
-
-        <div data-section="testimonials"></div>
-
-        <div data-section="faq"></div>
-
-        <div data-section="kontakt"></div>
-
- 
-        <div data-section="footer"></div>
+        <header data-section="navbar"></header>
+        <main id="main-content">
+            <section data-section="hero"></section>
+            <section data-section="ueber-mich"></section>
+            <section data-section="leistungen"></section>
+            <section data-section="portfolio"></section>
+            <section data-section="testimonials"></section>
+            <section data-section="faq"></section>
+            <section data-section="kontakt"></section>
+        </main>
+        <footer data-section="footer"></footer>
     </div>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script type="module" src="js/main.js"></script>
-
-
-
+    
     <div id="cookie-banner" class="cookie-banner" style="display: none;">
         <div class="container cookie-banner-content">
             <p class="cookie-text">
@@ -78,32 +85,88 @@
           "@context": "https://schema.org",
           "@type": "Person",
           "name": "Daniel Belik",
-          "url": "URL_ВАШЕГО_САЙТА", // ЗАМЕНИТЬ
+          "url": "https://webblock.org/",
           "jobTitle": "Webentwickler",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Eckerkamp 28b", // Из секции Kontakt
+            "streetAddress": "Eckerkamp 28b",
             "addressLocality": "Hamburg",
-            "postalCode": "22391", // Из секции Kontakt
+            "postalCode": "22391",
             "addressRegion": "Hamburg",
             "addressCountry": "DE"
           },
-          "email": "mailto:daniilbelik@icloud.com", // Из секции Kontakt
-          "telephone": "+4917662945281", // Из секции Kontakt
-          "knowsAbout": [ // Навыки из секции Über Mich
-                "Webentwicklung", "Konzeption", "Umsetzung",
-                "JavaScript", "React", "Vite", "Next.js",
-                "PHP", "Laravel",
-                "MySQL", "PostgreSQL", "MongoDB", "SQLite",
-                "HTML5", "CSS3", "Responsive Design"
-            ],
-          "image": "URL_К_ВАШЕМУ_ФОТО_ИЗ_UEBER_MICH", // ЗАМЕНИТЬ
-          "sameAs": [ // Ссылки из секции Kontakt и Footer
+          "email": "mailto:daniilbelik@icloud.com",
+          "telephone": "+49 176 62945281",
+          "knowsAbout": [
+            "Webentwicklung", "Konzeption", "Umsetzung",
+            "JavaScript", "React", "Vite", "Next.js",
+            "PHP", "Laravel",
+            "MySQL", "PostgreSQL", "MongoDB", "SQLite",
+            "HTML5", "CSS3", "Responsive Design"
+          ],
+          "image": "https://webblock.org/img/placeholder/avatar.png",
+          "sameAs": [
             "https://github.com/daniilbelik94",
             "https://www.linkedin.com/in/daniil-belik-74a1982b6/",
             "https://www.instagram.com/danilbelik/",
             "https://t.me/DanilBelik"
           ]
+        }
+        </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Daniel Belik - Webentwickler Portfolio",
+          "url": "https://webblock.org/",
+          "description": "Portfolio von Daniel Belik, Webentwickler aus Hamburg. Experte für moderne Web-Technologien wie React, Next.js, PHP/Laravel und Datenbanken.",
+          "author": {
+            "@type": "Person",
+            "name": "Daniel Belik"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://webblock.org/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+        </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Daniel Belik Webentwicklung",
+          "description": "Professionelle Webentwicklung und Full-Stack Development Services in Hamburg",
+          "url": "https://webblock.org/",
+          "telephone": "+49 176 62945281",
+          "email": "daniilbelik@icloud.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Eckerkamp 28b",
+            "addressLocality": "Hamburg",
+            "postalCode": "22391",
+            "addressRegion": "Hamburg",
+            "addressCountry": "DE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "53.5511",
+            "longitude": "9.9937"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Hamburg"
+          },
+          "serviceType": [
+            "Webentwicklung",
+            "Frontend Development",
+            "Backend Development",
+            "Full-Stack Development",
+            "React Development",
+            "Next.js Development",
+            "PHP/Laravel Development"
+          ],
+          "priceRange": "$$"
         }
         </script>
     </body>
