@@ -79,7 +79,7 @@
     font-weight: 500;
     padding: 0.5rem 0.2rem;
     position: relative;
-    transition: color  0.01sease;
+    transition: color  0.01s ease;
 }
 
 .nav-link::after {

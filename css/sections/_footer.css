@@ -79,6 +79,48 @@
     width: 70%;
 }
 
+/* Стили для виджетов iubenda в футере */
+.footer-legal .iubenda-white {
+    color: var(--text-secondary) !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+    position: relative !important;
+    padding: 0.2rem 0 !important;
+    transition: color var(--transition-normal) !important;
+    font-family: inherit !important;
+    background: none !important;
+    border: none !important;
+}
+
+.footer-legal .iubenda-white::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -2px !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 2px !important;
+    background-color: var(--primary) !important;
+    transition: width 0.3s ease !important;
+}
+
+.footer-legal .iubenda-white:hover {
+    color: var(--text-primary) !important;
+}
+
+.footer-legal .iubenda-white:hover::after {
+    width: 70% !important;
+}
+
+/* Стили для cookie banner iubenda ссылки */
+.cookie-link.iubenda-white {
+    color: var(--primary) !important;
+    text-decoration: underline !important;
+}
+
+.cookie-link.iubenda-white:hover {
+    color: var(--secondary) !important;
+}
+
 .social-icons-footer {
     display: flex;
     gap: 1rem;
@@ -132,6 +174,12 @@
         /* Центрируем подчеркивание под ссылкой */
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    /* Адаптивность для iubenda ссылок на мобильных */
+    .footer-legal .iubenda-white::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 
     .social-icons-footer {

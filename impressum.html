@@ -11,6 +11,16 @@
     <meta name="theme-color" content="#0ea5e9">
     <meta name="author" content="Daniel Belik">
     <link rel="alternate" hreflang="de" href="https://webblock.org/impressum.html">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VS0Q5MH39X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VS0Q5MH39X');
+    </script>
     <meta property="og:title" content="Impressum - Daniel Belik">
     <meta property="og:description" content="Impressum für die Webseite von Daniel Belik, Webentwickler aus Hamburg. Rechtliche Angaben gemäß TMG und Kontaktinformationen.">
     <meta property="og:type" content="website">
@@ -150,10 +160,28 @@
 
     <footer class="static-page-footer">
         <div class="container">
-            <p>&copy; <span id="current-year-static">2025</span> [Dein Name]. Alle Rechte vorbehalten. | <a
+            <p>&copy; <span id="current-year-static">2025</span> Daniel Belik. Alle Rechte vorbehalten. | <a
                     href="index.html">Zurück zur Hauptseite</a></p>
         </div>
     </footer>
+    
+    <!-- iubenda Privacy Policy and Cookie Policy Script -->
+    <script type="text/javascript">
+    (function (w,d) {
+        var loader = function () {
+            var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; 
+            s.src="https://cdn.iubenda.com/iubenda.js"; 
+            tag.parentNode.insertBefore(s,tag);
+        }; 
+        if(w.addEventListener){
+            w.addEventListener("load", loader, false);
+        }else if(w.attachEvent){
+            w.attachEvent("onload", loader);
+        }else{
+            w.onload = loader;
+        }
+    })(window, document);
+    </script>
 </body>
 
 </html>

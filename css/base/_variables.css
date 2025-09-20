@@ -44,10 +44,14 @@
     --bg-main: var(--dark-bg-color);
     --bg-secondary: var(--darker-bg-color);      /* Для фона секций, отличающихся от основного */
     --bg-element: var(--element-bg-color-dark);  /* Для карточек, полей ввода и т.д. */
+    --dark-bg: var(--dark-bg-color);  /* Алиас для совместимости */
     --text-main: var(--text-primary-dark);
     --text-muted: var(--text-secondary-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
     --text-link-color: var(--secondary);
     --border-main: var(--border-color-dark);
+    --border-color: var(--border-color-dark);
     --border-input: var(--border-color-dark);     /* Рамка для полей ввода */
     --navbar-background: var(--navbar-bg-dark);
     --shadow-subtle: var(--subtle-shadow-dark);
@@ -71,6 +75,8 @@
     --container-width: 1140px;
     --border-radius-sm: 8px;
     --border-radius-md: 12px;
+    --transition-normal: all 0.3s ease;
+    --transition-smooth: all 0.4s ease;
     /* ... остальные общие переменные ... */
 
     /* Переменные для Canvas фона */
@@ -84,10 +90,14 @@ body.light-theme {
     --bg-main: var(--light-bg-main);
     --bg-secondary: var(--light-bg-secondary);
     --bg-element: var(--light-bg-element); /* По умолчанию элементы белые */
+    --dark-bg: var(--light-bg-secondary);  /* Для светлой темы используем более темный оттенок */
     --text-main: var(--light-text-main);
     --text-muted: var(--light-text-muted);
+    --text-primary: var(--light-text-main);
+    --text-secondary: var(--light-text-muted);
     --text-link-color: var(--primary-dark);   /* Темно-индиго для ссылок на светлом фоне */
     --border-main: var(--light-border-main);
+    --border-color: var(--light-border-main);
     --border-input: var(--light-border-input);
     --shadow-subtle: var(--light-shadow-subtle);
     --glow-cyan: var(--light-glow-cyan);

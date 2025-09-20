@@ -9,6 +9,17 @@
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://webblock.org/404.html">
     <meta name="theme-color" content="#0ea5e9">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VS0Q5MH39X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VS0Q5MH39X');
+    </script>
+    
     <link rel="icon" href="img/logo.svg" type="image/svg+xml" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -79,6 +90,24 @@
 
     <script>
         document.getElementById('current-year-static').textContent = new Date().getFullYear();
+    </script>
+    
+    <!-- iubenda Privacy Policy and Cookie Policy Script -->
+    <script type="text/javascript">
+    (function (w,d) {
+        var loader = function () {
+            var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; 
+            s.src="https://cdn.iubenda.com/iubenda.js"; 
+            tag.parentNode.insertBefore(s,tag);
+        }; 
+        if(w.addEventListener){
+            w.addEventListener("load", loader, false);
+        }else if(w.attachEvent){
+            w.attachEvent("onload", loader);
+        }else{
+            w.onload = loader;
+        }
+    })(window, document);
     </script>
 </body>
 
