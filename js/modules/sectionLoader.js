@@ -25,5 +25,4 @@ export async function loadSections() {
         }
     }
     await Promise.all(loadPromises);
-
 }

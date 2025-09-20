@@ -8,15 +8,14 @@
     left: 0;
     width: 100%;
     background-color: var(--bg-element);
-    /* Темный фон */
-    color: var(--text-secondary);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: var(--text-main);
     padding: 1.5rem 0;
     z-index: 2500;
-    /* Поверх всего, но ниже модальных окон, если они выше */
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
-    border-top: 1px solid var(--border-color);
+    box-shadow: var(--shadow-subtle), 0 -5px 15px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid var(--border-main);
     transform: translateY(100%);
-    /* Начальное состояние для анимации */
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -39,15 +38,18 @@
     line-height: 1.6;
     margin: 0;
     flex-grow: 1;
+    color: var(--text-main);
 }
 
 .cookie-link {
     color: var(--secondary);
     text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
 .cookie-link:hover {
     color: var(--primary);
+    text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.6);
 }
 
 .cookie-actions {
@@ -60,15 +62,30 @@
 .btn-cookie-accept {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
-    /* Используем цвета из переменных */
-    /* background-color: var(--secondary); */
-    /* Уже есть в btn-secondary */
-    /* color: var(--dark-bg); */
+    /* Переопределяем стили для cookie кнопки в темной теме */
+    background-color: var(--secondary) !important;
+    color: var(--bg-main) !important;
+    border-color: var(--secondary) !important;
 }
 
 .btn-cookie-accept:hover {
-    /* background-color: #05a9c3; */
-    /* Уже есть в btn-secondary:hover */
+    background-color: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.6) !important;
+}
+
+/* Специальные стили для светлой темы */
+body.light-theme .btn-cookie-accept {
+    background-color: var(--secondary) !important;
+    color: white !important;
+    border-color: var(--secondary) !important;
+}
+
+body.light-theme .btn-cookie-accept:hover {
+    background-color: var(--primary-dark) !important;
+    color: white !important;
+    border-color: var(--primary-dark) !important;
 }
 
 

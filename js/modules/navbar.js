@@ -72,38 +72,24 @@ export function initNavbar() {
         link.addEventListener('click', closeMenuOnLinkClick);
     });
 
+    // Мгновенная навигация без задержек
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href.length > 1 && document.querySelector(href)) {
+            const target = document.querySelector(href);
+            
+            if (target && href !== '#') {
                 e.preventDefault();
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
-                    let offset = navbar ? navbar.offsetHeight : 0;
-                    if (navbar && !navbar.classList.contains('scrolled') && href !== '#hero') {
-                    } else if (navbar && navbar.classList.contains('scrolled') && href !== '#hero') {
-                    } else if (href === '#hero'){
-                        offset = 0; 
-                    }
-
-
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-
-                    setTimeout(() => {
-                        navLinks.forEach(l => l.classList.remove('active'));
-                        mobileNavLinks.forEach(l => l.classList.remove('active'));
-                        const desktopLink = document.querySelector(`.nav-link[href="${href}"]`);
-                        const mobileLink = document.querySelector(`.mobile-nav-link[href="${href}"]`);
-                        if(desktopLink) desktopLink.classList.add('active');
-                        if(mobileLink) mobileLink.classList.add('active'); 
-                    }, 100); 
-                }
+                e.stopPropagation(); // Останавливаем всплытие события
+                
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                
+                // Мгновенный переход
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'auto' // Еще быстрее чем instant
+                });
             }
         });
     });

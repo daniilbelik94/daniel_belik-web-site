@@ -10,6 +10,8 @@ import { initCookieBanner } from './modules/cookieBanner.js';
 import { initBackgroundAnimation } from './modules/backgroundAnimation.js';
 import { initScrollAnimations } from './modules/scrollAnimations.js';
 import { initThemeSwitcher } from './modules/themeSwitcher.js';
+import { initAdvancedAnimations } from './modules/advancedAnimations.js';
+import { initPerformanceOptimizer } from './modules/performanceOptimizer.js';
 function initFooter() {
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
@@ -29,7 +31,9 @@ document.addEventListener('DOMContentLoaded', async () => { // <--- Сделай
         initCookieBanner,
         initBackgroundAnimation,
         initScrollAnimations,
-        initThemeSwitcher
+        initThemeSwitcher,
+        initAdvancedAnimations,
+        initPerformanceOptimizer
     ];
     modulesToInit.forEach(initModule => {
         try {

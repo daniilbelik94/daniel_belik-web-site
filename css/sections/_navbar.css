@@ -79,7 +79,7 @@
     font-weight: 500;
     padding: 0.5rem 0.2rem;
     position: relative;
-    transition: color 0.4s ease, var(--transition-normal);
+    transition: color  0.01sease;
 }
 
 .nav-link::after {
@@ -92,13 +92,13 @@
     width: 0;
     height: 2px;
     background-color: var(--primary);
-    transition: width 0.4s ease;
+    transition: width 0.1s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--text-primary);
-    transition: color 0.4 ease;
+    transition: color 0.1s ease;
 }
 
 .nav-link:hover::after,
@@ -114,7 +114,7 @@
     background: none;
     border: none;
     color: var(--text-primary);
-    transition: color 0.4s ease-out;
+    transition: color 0.1s ease-out;
     font-size: 1.8rem;
     /* Размер иконки */
     cursor: pointer;
@@ -126,7 +126,7 @@
 .burger-menu:hover,
 .burger-menu.active {
     color: var(--text-primary);
-    transition: color, background-color 0.4s ease-out;
+    transition: color, background-color 0.1s ease-out;
 }
 
 .burger-bar {
@@ -202,7 +202,7 @@
 
 .close-menu-btn:hover {
     color: var(--primary);
-    transition: color 0.4s ease-out;
+    transition: color 0.1s ease-out;
 }
 
 .mobile-nav-menu {
@@ -220,7 +220,7 @@
     color: var(--text-primary);
     text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: color 0.4s ease-out, color var(--transition-smooth), background var(--transition-normal);
+    transition: color 0.1s ease, background 0.1s ease;
 }
 
 .mobile-nav-link:hover {

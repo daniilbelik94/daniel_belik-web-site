@@ -49,19 +49,52 @@
 
 /* --- Стили для всех карточек преимуществ --- */
 .benefit-item {
-    /* Убираем фон и тень по умолчанию */
-    background-color: var(--bg-element);
-    padding: 1.5rem ;
+    background: var(--bg-element);
+    background: linear-gradient(145deg, 
+        var(--bg-element) 0%, 
+        rgba(var(--primary-rgb), 0.05) 100%);
+    padding: 1.5rem;
     border-radius: var(--border-radius-md);
-    /* Сбрасываем, если не нужен */
     box-shadow: var(--shadow-subtle);
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-    transition: transform 0.3s ease;
-    /* Оставляем только transform для ховера */
-    border: none;
-    /* Убираем border */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(var(--primary-rgb), 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    will-change: transform, box-shadow;
+}
+
+.benefit-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(var(--primary-rgb), 0.1), 
+        transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.benefit-item:hover::before {
+    left: 100%;
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(var(--primary-rgb), 0.3);
+    border-color: rgba(var(--primary-rgb), 0.3);
+    background: linear-gradient(145deg, 
+        var(--bg-element) 0%, 
+        rgba(var(--primary-rgb), 0.1) 100%);
 }
 
 
@@ -70,15 +103,51 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Центрируем иконку, если контейнер шире */
-    width: 50px;
-    height: 50px;
-    border-radius: var(--border-radius-sm);
-    background-color: rgba(var(--primary-rgb, 99, 102, 241), 0.1);
-    /* Оставляем фон для иконки */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-rgb), 0.2) 0%, 
+        rgba(var(--secondary-rgb), 0.1) 100%);
     color: var(--primary);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(var(--primary-rgb), 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+}
+
+.benefit-icon-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, 
+        rgba(var(--primary-rgb), 0.3) 0%, 
+        transparent 70%);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.benefit-item:hover .benefit-icon-container {
+    transform: scale(1.1) rotate(10deg);
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-rgb), 0.3) 0%, 
+        rgba(var(--secondary-rgb), 0.2) 100%);
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.4);
+    border-color: var(--primary);
+}
+
+.benefit-item:hover .benefit-icon-container::after {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
 }
 
 /* На скриншоте иконка слева от текста, не в центре контейнера. Для этого: */
@@ -96,20 +165,38 @@
     font-family: var(--font-primary);
     font-weight: 600;
     font-size: 1.125rem;
-    /* 18px - как в примере */
     line-height: 1.4;
     text-transform: uppercase;
     color: var(--text-primary);
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.benefit-item:hover .benefit-title {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.5);
 }
 
 .benefit-text {
     font-weight: 400;
-    /* В примере 300, но для Space Grotesk 400 лучше */
     font-size: 1rem;
-    /* 16px - как в примере */
     line-height: 1.6;
     color: var(--text-secondary);
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
 }
+
+.benefit-item:hover .benefit-text {
+    color: var(--text-primary);
+}
+
+/* Добавляем stagger анимацию для карточек */
+.benefit-item:nth-child(1) { animation-delay: 0ms; }
+.benefit-item:nth-child(2) { animation-delay: 100ms; }
+.benefit-item:nth-child(3) { animation-delay: 200ms; }
+.benefit-item:nth-child(4) { animation-delay: 300ms; }
 
 /* --- Обертка для остальных 3х карточек --- */
 .benefits-others-wrapper {

@@ -166,3 +166,226 @@
     transform: translateY(0) translateX(0) scale(1);
     /* Возвращаем на место */
 }
+
+/* ===============================
+   ПРОДВИНУТЫЕ АНИМАЦИИ 2025
+   =============================== */
+
+/* Floating анимация для элементов */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    66% {
+        transform: translateY(5px) rotate(-1deg);
+    }
+}
+
+/* Пульсация с масштабом */
+@keyframes pulseScale {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Shake анимация для привлечения внимания */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+    20%, 40%, 60%, 80% { transform: translateX(3px); }
+}
+
+/* Морфинг для изменения формы */
+@keyframes morphBorder {
+    0%, 100% {
+        border-radius: 12px;
+    }
+    25% {
+        border-radius: 50% 12px 50% 12px;
+    }
+    50% {
+        border-radius: 12px 50% 12px 50%;
+    }
+    75% {
+        border-radius: 50% 50% 12px 12px;
+    }
+}
+
+/* Светящийся эффект для границ */
+@keyframes glowBorder {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(99, 102, 241, 0.4);
+    }
+}
+
+/* Волновой эффект */
+@keyframes wave {
+    0%, 100% {
+        clip-path: polygon(
+            0% 45%, 15% 44%, 32% 50%,
+            54% 60%, 70% 61%, 84% 59%,
+            100% 52%, 100% 100%, 0% 100%
+        );
+    }
+    50% {
+        clip-path: polygon(
+            0% 60%, 16% 65%, 34% 66%,
+            51% 62%, 67% 50%, 84% 45%,
+            100% 46%, 100% 100%, 0% 100%
+        );
+    }
+}
+
+/* Градиентное перемещение для кнопок */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Вращение с остановкой */
+@keyframes spinPause {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25%, 75% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+/* Эффект печатной машинки с лучшим таймингом */
+@keyframes typewriterAdvanced {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Slide-in анимации с bounce эффектом */
+@keyframes slideInBounce {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Zoom с rotation */
+@keyframes zoomRotate {
+    0% {
+        transform: scale(0.5) rotate(-180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* Stagger анимация для групп элементов */
+.stagger-animation {
+    animation-delay: calc(var(--stagger-delay, 0) * 100ms);
+}
+
+/* Hover эффекты для интерактивности */
+.hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+    transform: scale(1.05);
+}
+
+.hover-tilt {
+    transition: transform 0.3s ease;
+}
+
+.hover-tilt:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+}
+
+/* Классы для применения анимаций */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-scale {
+    animation: pulseScale 2s ease-in-out infinite;
+}
+
+.animate-morph {
+    animation: morphBorder 4s ease-in-out infinite;
+}
+
+.animate-glow-border {
+    animation: glowBorder 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+    background: linear-gradient(-45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Улучшения производительности */
+.performance-optimized {
+    will-change: transform, opacity;
+    transform: translateZ(0); /* Форсируем hardware acceleration */
+    backface-visibility: hidden;
+}
+
+/* Responsive анимации - отключение на медленных устройствах */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

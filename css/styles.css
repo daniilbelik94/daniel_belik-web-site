@@ -18,3 +18,9 @@
 @import url('./sections/_faq.css');
 @import url('./sections/_kontakt.css');
 @import url('./sections/_footer.css');
+
+/* Компоненты */
+@import url('./components/_buttons.css');
+
+/* Утилиты */
+@import url('./utilities/_modern.css');

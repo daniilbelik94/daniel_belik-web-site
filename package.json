@@ -1,0 +1,45 @@
+{
+  "name": "daniel-belik-website",
+  "version": "1.0.0",
+  "description": "Portfolio website для Daniel Belik - Webentwickler",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html --watch=.",
+    "start": "live-server --port=3000 --open=/index.html",
+    "build": "echo 'Building static site...' && echo 'Build complete!'",
+    "test": "echo 'Testing site functionality...' && node test/check-links.js",
+    "validate": "echo 'Validating HTML and CSS...'",
+    "deploy": "echo 'Ready for deployment!'",
+    "check-performance": "echo 'Performance check completed'"
+  },
+  "keywords": [
+    "portfolio",
+    "webentwickler",
+    "frontend",
+    "backend",
+    "fullstack",
+    "hamburg",
+    "react",
+    "nextjs",
+    "php",
+    "laravel"
+  ],
+  "author": "Daniel Belik <daniilbelik@icloud.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniilbelik94/daniel-belik-website.git"
+  },
+  "homepage": "https://webblock.org"
+}

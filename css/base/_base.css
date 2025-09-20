@@ -13,7 +13,6 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    /* Базовый размер шрифта для rem */
 }
 
 body {
@@ -72,7 +71,7 @@ body {
 a {
     color: var(--text-link);
     text-decoration: none;
-    transition: var(--transition-normal);
+    transition: color 0.1s ease;
 }
 
 a:hover {

@@ -15,10 +15,7 @@
 }
 
 /* Улучшенный фокус для доступности */
-*:focus {
-  outline: 2px solid #0ea5e9;
-  outline-offset: 2px;
-}
+
 
 /* Пропуск ссылки для скринридеров */
 .skip-link {
@@ -45,14 +42,10 @@
 
 /* Улучшенная контрастность для ссылок */
 a:not(.btn) {
-  text-decoration: underline;
   text-decoration-skip-ink: auto;
 }
 
-a:not(.btn):hover,
-a:not(.btn):focus {
-  text-decoration-thickness: 2px;
-}
+
 
 /* Печатные стили для SEO */
 @media print {
@@ -63,10 +56,7 @@ a:not(.btn):focus {
     text-shadow: none !important;
   }
 
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
+
 
   a[href]:after {
     content: " (" attr(href) ")";
